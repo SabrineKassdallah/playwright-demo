@@ -103,13 +103,3 @@ La fixture `request` envoie des requêtes HTTP sans navigateur : vérification d
 | Remplacer la réponse | `route.fulfill({ json })` | Tester le front sans dépendre du back |
 | Modifier la vraie réponse | `route.fetch()` puis `route.fulfill` | Ajouter un cas particulier dans des données réelles |
 | Panne réseau | `route.abort()` | Vérifier le comportement en cas d'erreur |
-
-## 9. La CI – `.github/workflows/playwright.yml` et `Jenkinsfile`
-
-- **Pull request** → smoke tests seulement (rapide).
-- **Push sur main, nuit, manuel** → régression complète.
-- Le rapport est publié **même en cas d'échec** (`if: always()` / `post { always }`).
-- Dans Jenkins, le plugin `junit` met le build en **UNSTABLE** (jaune) si des tests échouent.
-
----
-
