@@ -25,7 +25,7 @@ export class InventoryPage {
   product(name: string): Locator {
     return this.page.getByTestId('inventory-item').filter({ hasText: name });
   }
-
+  
   async addToCart(name: string) {
     await this.product(name).getByRole('button', { name: 'Add to cart' }).click();
   }
